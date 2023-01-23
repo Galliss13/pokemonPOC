@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "module": "es6",
+    "moduleResolution": "node",
+    "outDir": "dist"                           /* Skip type checking all .d.ts files. */
+  },
+  "ts-node": {
+    "esm": true
+  }
+}
