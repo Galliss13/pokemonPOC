@@ -1,0 +1,41 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model owners {
+  id              Int               @id @default(autoincrement())
+  name            String            @unique
+  pokemons        pokemons[]
+}
+
+model pokeballs {
+  id              Int               @id @default(autoincrement())
+  pokeball        String
+  price           Int
+  pokemons        pokemons[]
+}
+
+
+model pokemons {
+  id         Int        @id @default(autoincrement())
+  name       String
+  nickname   String
+  ownerId    Int?
+  typeId     Int
+  pokeballId Int?
+  level      Int
+  owners     owners?    @relation(fields: [ownerId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  pokeballs  pokeballs? @relation(fields: [pokeballId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  types      types      @relation(fields: [typeId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model types {
+  id       Int        @id @default(autoincrement())
+  type     String     @unique
+  pokemons pokemons[]
+}
