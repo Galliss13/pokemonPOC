@@ -2,9 +2,7 @@ import { Pokemon } from "../protocols/pokemonType.js";
 import pokemonRepository from "../repositories/pokemon-repository.js";
 
 async function getAllPokemons(thereIsType: string) {
-
     const pokemons = await pokemonRepository.getAllPokemons(thereIsType)
-
     return pokemons
 } 
 

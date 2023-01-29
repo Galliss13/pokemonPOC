@@ -1,5 +1,4 @@
 import { Request, Response } from "express";
-import { pokemonSchema } from "../models.js";
 import { Pokemon } from "../protocols/pokemonType.js";
 import pokemonService from "../services/pokemon-service.js";
 
@@ -17,14 +16,6 @@ async function getAllPokemons(req: Request, res: Response) {
 async function postPokemon(req: Request, res: Response) {
   const pokemon = req.body as Pokemon;
   try {
-    const { error } = pokemonSchema.validate(pokemon, {
-      abortEarly: false,
-    });
-
-    if (error) {
-      const errors = error.details.map((detail) => detail.message);
-      return res.status(422).send(errors);
-    }
 
     await pokemonService.postPokemon(pokemon)
 
@@ -40,13 +31,6 @@ async function putPokemon(req: Request, res: Response) {
   const pokemon = req.body as Pokemon;
 
   try {
-    const { error } = pokemonSchema.validate(pokemon, {
-      abortEarly: false,
-    });
-    if (error) {
-      const errors = error.details.map((detail) => detail.message);
-      return res.status(422).send(errors);
-    }
 
     await pokemonService.putPokemon(pokemon, id)
 
