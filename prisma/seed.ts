@@ -5,16 +5,19 @@ async function main() {
     await prisma.owners.createMany({
         data: [
             {
-                name: ""
+                name: "Misty"
             },
             {
-                name: ""
+                name: "Serena"
             },
             {
-                name: ""
+                name: "Ash"
             },
             {
-                name: ""
+                name: "Goh"
+            },
+            {
+                name: "Brock"
             },
         ]
     })
@@ -104,60 +107,107 @@ async function main() {
     await prisma.pokemons.createMany({
         data: [
             {
+                name: "Goldeen",
+                nickname: "peixe",
+                ownerId: 1,
+                typeId: 3,
+                pokeballId: 1,
+                level: 12
+            },
+            {
+                name: "Staryu",
+                nickname: "",
+                ownerId: 1,
+                typeId: 3,
+                pokeballId: 2,
+                level: 16
+            },
+            {
+                name: "Psyduck",
+                nickname: "",
+                ownerId: 1,
+                typeId: 3,
+                pokeballId: 1,
+                level: 30
+            },
+            {
+                name: "Gyarados",
+                nickname: "",
+                ownerId: 1,
+                typeId: 5,
+                pokeballId: 4,
+                level: 42
+            },
+            {
+                name: "Braixen",
+                nickname: "",
+                ownerId: 2,
+                typeId: 2,
+                pokeballId: 1,
+                level: 50
+            },
+            {
+                name: "Pancham",
+                nickname: "",
+                ownerId: 2,
+                typeId: 6,
+                pokeballId: 2,
+                level: 7
+            },
+            {
+                name: "Sylveon",
+                nickname: "",
+                ownerId: 2,
+                typeId: 18,
+                pokeballId: 3,
+                level: 31
+            },
+            {
                 name: "Pikachu",
                 nickname: "",
-                ownerId: 1,
-                typeId: 1,
-                pokeballId: 1,
-                level: 1
+                ownerId: 3,
+                typeId: 8,
+                level: 86
             },
             {
-                name: "",
+                name: "Cinderace",
                 nickname: "",
-                ownerId: 1,
-                typeId: 1,
-                pokeballId: 1,
-                level: 1
+                ownerId: 4,
+                typeId: 2,
+                pokeballId: 4,
+                level: 70
             },
             {
-                name: "",
+                name: "Sobbie",
                 nickname: "",
-                ownerId: 1,
-                typeId: 1,
+                ownerId: 4,
+                typeId: 3,
                 pokeballId: 1,
-                level: 1
+                level: 2
             },
             {
-                name: "",
+                name: "Onix",
                 nickname: "",
-                ownerId: 1,
-                typeId: 1,
-                pokeballId: 1,
-                level: 1
+                ownerId: 5,
+                typeId: 10,
+                pokeballId: 2,
+                level: 65
             },
             {
-                name: "",
-                nickname: "",
-                ownerId: 1,
-                typeId: 1,
+                name: "Geodude",
+                nickname: "Dude",
+                ownerId: 5,
+                typeId: 11,
                 pokeballId: 1,
-                level: 1
+                level: 16
             },
             {
-                name: "",
-                nickname: "",
-                ownerId: 1,
-                typeId: 1,
-                pokeballId: 1,
-                level: 1
-            },
-            {
-                name: "",
-                nickname: "",
-                ownerId: 1,
-                typeId: 1,
-                pokeballId: 1,
-                level: 1
+                name: "Zubat",
+                nickname: "Zuzu",
+                ownerId: 5,
+                typeId: 7,
+                pokeballId: 3,
+                level: 11
             },
         ]
     })
